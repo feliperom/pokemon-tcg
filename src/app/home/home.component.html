@@ -1,0 +1,28 @@
+<header class="header">
+  <!-- <h1>Pokémon</h1> -->
+  <form (ngSubmit)="onSearch()" class="search">
+    <input [(ngModel)]="search" name="search" #ctrl="ngModel" class="h1" placeholder="Buscar Pokémon">
+  </form>
+</header>
+<main>
+  <div *ngIf="items$ | async as items; else loading">
+    <div *ngIf="items.length>0;else empty" class="list list-clear">
+      <div class="card-deck">
+        <app-item [data]="item" *ngFor="let item of items; trackBy: trackByFn" class="item">
+        </app-item>
+      </div>
+    </div>
+    <ng-template #empty>
+      <div class="alert h1" role="alert">
+        <strong>
+          Nenhum resultado encontrado.
+        </strong>
+      </div>
+    </ng-template>
+  </div>
+  <ng-template #loading>
+    <label class="loader center-aligned">
+      <progress aria-label="Loading cards…"></progress>
+    </label>
+  </ng-template>
+</main>

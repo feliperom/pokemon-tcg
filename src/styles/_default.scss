@@ -1,0 +1,52 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: $body-bg;
+  font-family: $body-font;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: $header-font;
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: $h2-size;
+
+  @media screen and (min-width: $screen-sm-min) {
+    font-size: $h1-size;
+  }
+}
+
+h2,
+.h2 {
+  font-weight: 300;
+  font-size: $h2-size;
+}
+
+h3,
+.h3 {
+  font-size: $h3-size;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+#wrapper {
+  min-height: 100%;
+}

@@ -1,0 +1,16 @@
+<div class="card is-routerLink" [routerLink]="[data.id]" routerLinkActive="router-link-active">
+  <img src="./assets/card-back.png" [attr.src]="data.imageUrl" [alt]="data.name">
+  <div class="card-description">
+    <strong class="primary">
+      {{ data.name }}
+    </strong>
+    <span>
+      {{ data.id }}
+    </span>
+    <ul class="list-clear right-floated">
+      <li *ngFor="let type of data.types">
+        <app-energy [data]="type"></app-energy>
+      </li>
+    </ul>
+  </div>
+</div>
