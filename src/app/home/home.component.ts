@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CardsService } from '../services/cards.service';
-import { Card } from 'src/app/interfaces/pokemon';
+import { Card } from '../interfaces/pokemon';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -34,6 +34,7 @@ export class HomeComponent {
         map(
           (data: Card[]) => {
             data.sort(this.sortByName);
+            console.log(data);
             return data;
           }
         )

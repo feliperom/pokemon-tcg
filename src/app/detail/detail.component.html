@@ -1,6 +1,6 @@
 <div *ngIf="item$ | async as item; else loadingBlock">
   <div *ngIf="item;else emptyBlock">
-    <header class="header">
+    <header class="header px-3">
       <h1>
         <a [routerLink]="['/']" class="is-routerLink is-white is-seamless" aria-label="Go back">
           &lsaquo;

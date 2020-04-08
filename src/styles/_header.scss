@@ -1,18 +1,26 @@
 .header {
-  background: $primary;
+  background: #E3350D;
+  border-bottom: 2px solid #000;
   color: $white;
-  margin-bottom: $spacing-large * -2;
-  padding: $spacing-large $spacing-small ($spacing-large * 2);
-  border-bottom: 10px solid $secondary;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: stretch;
-  align-items: flex-start;
+  align-items: center;
   height: 100px;
 
   >h1 {
     margin: 0;
   }
+}
+
+.navbar-custom {
+  height: 100px;
+  background: #E3350D;
+  border-bottom: 2px solid #000;
+}
+
+#navbarSupportedContent {
+  justify-content: flex-end;
 }

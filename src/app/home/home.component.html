@@ -1,16 +1,27 @@
-<header class="header">
-  <!-- <h1>Pokémon</h1> -->
-  <form (ngSubmit)="onSearch()" class="search">
-    <input [(ngModel)]="search" name="search" #ctrl="ngModel" class="h1" placeholder="Buscar Pokémon">
-  </form>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <a class="navbar-brand" href="#"><h2 class="m-0">Desafio Pokemon</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form (ngSubmit)="onSearch()" class="form-inline my-2 my-lg-0">
+        <input [(ngModel)]="search" class="form-control-lg mr-sm-2 " name="search" type="search" #ctrl="ngModel" placeholder="Buscar Pokémon" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
 </header>
 <main>
   <div *ngIf="items$ | async as items; else loading">
     <div *ngIf="items.length>0;else empty" class="list list-clear">
-      <div class="card-deck">
-        <app-item [data]="item" *ngFor="let item of items; trackBy: trackByFn" class="item">
-        </app-item>
-      </div>
+
+
+      <app-item [data]="item"
+        *ngFor="let item of items; trackBy: trackByFn"
+        class="card"></app-item>
     </div>
     <ng-template #empty>
       <div class="alert h1" role="alert">
